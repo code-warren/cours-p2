@@ -12,7 +12,7 @@ body {
 .box {
   border: 6px solid white;
   transition: 0.25s ease;
-  background: black;
+  background: rgb(0, 0, 0);
   padding: 10px;
 }
 p {
