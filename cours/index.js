@@ -24,7 +24,7 @@ btn2.addEventListener("click", () => {
 
 /*<div> > #id .class > baliseHTML*/
 
-//--------------------------------------------------------------------
+//-------------------------------------------------------------
 //Mouse Events
 const mousemove = document.querySelector(".mousemove");
 
@@ -41,6 +41,59 @@ window.addEventListener("mouseup", () => {
   mousemove.style.transform = "scale(1) translate(-50%, -50%)";
   mousemove.style.border = "2px solid teal";
 });
+
 questionContainer.addEventListener("mouseenter", () => {
-  questionContainer.style.background = "rgba(0,0,0,0.6)";
+  questionContainer.style.background = "rgba(,0,0,0.6)";
 });
+
+questionContainer.addEventListener("mouseout", () => {
+  questionContainer.style.background = "pink";
+});
+
+response.addEventListener("mouseover", () => {
+  response.style.transform = "rotate(2deg)";
+});
+
+//-------------------------------------------------------------
+// KeyPress event
+
+const keypressContainer = document.querySelector(".keypress");
+const key = document.getElementById("key");
+
+const ring = (key) => {
+  const audio = new Audio();
+  audio.src = key + ".mp3";
+  audio.play();
+};
+
+document.addEventListener("keypress", (e) => {
+  key.textContent = e.key;
+
+  if (e.key === "j") {
+    keypressContainer.style.background = "pink";
+  } else if (e.key === "h") {
+    keypressContainer.style.background = "teal";
+  } else {
+    keypressContainer.style.background = "red";
+  }
+
+  ring(e.key);
+});
+
+//-------------------------------------------------------------
+// Scroll event
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+
+  if (window.scrollY > 120) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = "-50px";
+  }
+});
+
+//-------------------------------------------------------------
+// Form event
